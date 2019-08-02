@@ -1,0 +1,30 @@
+//
+// PerfTest.proto
+//
+// Basic Google Protocol Buffer definition for Performance testing AFT
+//
+//
+
+//
+// Basic node/entry building blocks
+//
+
+syntax = "proto3";
+
+package perftest;
+
+service PerfTest {
+
+    //rpc HelloWorld(HelloRequest)           returns () {}   ---- Doesnt compile
+
+    rpc HelloWorld(HelloRequest)           returns (HelloResponse) {}
+}
+
+message HelloRequest {
+    string text = 1;
+}
+
+message HelloResponse {
+    string text = 1;
+}
+
